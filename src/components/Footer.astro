@@ -1,0 +1,49 @@
+---
+const footerLinks = [
+  { label: 'Categories', href: '/categories' },
+  { label: 'About', href: '/about' },
+  { label: 'Contact', href: '/contact' },
+  { label: 'Privacy', href: '/privacy' },
+  { label: 'Terms', href: '/terms' },
+];
+
+const year = new Date().getFullYear();
+---
+
+<footer class="mt-auto border-t border-slate-200/80 bg-card">
+  <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
+    <div class="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
+      <div class="max-w-sm">
+        <a href="/" class="font-heading text-xl font-bold text-primary">
+          SymbolBuddy
+        </a>
+        <p class="mt-3 text-sm leading-relaxed text-secondary/70">
+          Find out what any symbol means.
+        </p>
+      </div>
+
+      <nav aria-label="Footer navigation">
+        <ul class="flex flex-wrap gap-x-6 gap-y-3">
+          {
+            footerLinks.map((link) => (
+              <li>
+                <a
+                  href={link.href}
+                  class="text-sm font-medium text-secondary/70 transition-colors hover:text-primary"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+    </div>
+
+    <div class="mt-10 border-t border-slate-200/80 pt-6">
+      <p class="text-sm text-secondary/60">
+        &copy; {year} SymbolBuddy. All rights reserved.
+      </p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,54 @@
+---
+import SearchBar from './SearchBar.jsx';
+
+interface Props {
+  headline: string;
+  subheading: string;
+}
+
+const { headline, subheading } = Astro.props;
+
+const popularSearches = [
+  { label: 'Washing symbols', href: '/search?q=washing+symbols' },
+  { label: 'Dashboard warning lights', href: '/search?q=dashboard+warning+lights' },
+  { label: 'Hazard symbols', href: '/search?q=hazard+symbols' },
+  { label: 'Keyboard shortcuts', href: '/search?q=keyboard+shortcuts' },
+  { label: 'Recycling codes', href: '/search?q=recycling+codes' },
+];
+---
+
+<section class="relative overflow-hidden bg-gradient-to-b from-primary/5 via-background to-background px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+  <div class="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-accent/10 blur-3xl" aria-hidden="true"></div>
+  <div class="pointer-events-none absolute -bottom-20 -left-20 h-72 w-72 rounded-full bg-primary/10 blur-3xl" aria-hidden="true"></div>
+
+  <div class="relative mx-auto max-w-3xl text-center">
+    <h1 class="font-heading text-4xl font-extrabold tracking-tight text-secondary sm:text-5xl lg:text-6xl">
+      {headline}
+    </h1>
+    <p class="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-secondary/70 sm:text-xl">
+      {subheading}
+    </p>
+
+    <div class="mx-auto mt-10 max-w-2xl">
+      <SearchBar client:load />
+    </div>
+
+    <div class="mt-8">
+      <p class="text-sm font-medium text-secondary/60">Popular searches</p>
+      <ul class="mt-3 flex flex-wrap items-center justify-center gap-2">
+        {
+          popularSearches.map((search) => (
+            <li>
+              <a
+                href={search.href}
+                class="inline-block rounded-full border border-slate-200/80 bg-card px-4 py-2 text-sm font-medium text-secondary/80 shadow-sm transition-all hover:border-primary/30 hover:text-primary"
+              >
+                {search.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,54 @@
+---
+interface Crumb {
+  label: string;
+  href?: string;
+}
+
+interface Props {
+  crumbs: Crumb[];
+}
+
+const { crumbs } = Astro.props;
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: crumbs.map((crumb, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    name: crumb.label,
+    ...(crumb.href ? { item: new URL(crumb.href, Astro.site ?? Astro.url.origin).href } : {}),
+  })),
+};
+---
+
+<nav aria-label="Breadcrumb" class="mb-6">
+  <ol class="flex flex-wrap items-center gap-2 text-sm text-secondary/70">
+    {
+      crumbs.map((crumb, index) => {
+        const isLast = index === crumbs.length - 1;
+
+        return (
+          <li class="flex items-center gap-2">
+            {index > 0 && (
+              <span class="text-secondary/40" aria-hidden="true">
+                /
+              </span>
+            )}
+            {isLast || !crumb.href ? (
+              <span class="font-medium text-secondary" aria-current="page">
+                {crumb.label}
+              </span>
+            ) : (
+              <a href={crumb.href} class="transition-colors hover:text-primary">
+                {crumb.label}
+              </a>
+            )}
+          </li>
+        );
+      })
+    }
+  </ol>
+
+  <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+</nav>
