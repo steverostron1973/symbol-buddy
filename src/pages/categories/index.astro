@@ -1,0 +1,53 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import CategoryCard from '../../components/CategoryCard.astro';
+import { categories } from '../../data/categories.js';
+---
+
+<Layout
+  title="Symbol Categories — SymbolBuddy"
+  description="Browse all symbol categories on SymbolBuddy. Find laundry symbols, dashboard warning lights, hazard signs, keyboard shortcuts and more."
+>
+  <Header />
+
+  <main class="px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
+    <div class="mx-auto max-w-6xl">
+      <Breadcrumbs
+        crumbs={[
+          { label: 'Home', href: '/' },
+          { label: 'Categories' },
+        ]}
+      />
+
+      <div class="mx-auto max-w-2xl text-center">
+        <h1 class="font-heading text-3xl font-bold text-secondary sm:text-4xl lg:text-5xl">
+          All Symbol Categories
+        </h1>
+        <p class="mt-4 text-base leading-relaxed text-secondary/70 sm:text-lg">
+          Browse our complete library of symbol categories — from laundry care labels to car dashboard warning lights.
+        </p>
+      </div>
+
+      <ul class="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          categories.map((category) => (
+            <li class="list-none">
+              <CategoryCard
+                title={category.name}
+                description={category.description}
+                slug={category.slug}
+                icon={category.icon}
+                count={category.count}
+              />
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
