@@ -1,0 +1,110 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+---
+
+<Layout
+  title="Contact Us — SymbolBuddy"
+  description="Get in touch with the SymbolBuddy team. Report errors, suggest new symbols, or ask a question."
+>
+  <Header />
+
+  <main class="px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
+    <div class="mx-auto max-w-2xl">
+      <Breadcrumbs
+        crumbs={[
+          { label: 'Home', href: '/' },
+          { label: 'Contact' },
+        ]}
+      />
+
+      <h1 class="font-heading text-3xl font-bold text-secondary sm:text-4xl lg:text-5xl">
+        Contact SymbolBuddy
+      </h1>
+
+      <p class="mt-6 text-base leading-relaxed text-secondary/80 sm:text-lg">
+        We'd love to hear from you. Whether you've spotted a missing symbol, found an error, or want to suggest a new category, get in touch.
+      </p>
+
+      <form class="mt-10 space-y-6 rounded-2xl border border-slate-200/80 bg-card p-6 shadow-sm sm:p-8" aria-label="Contact form">
+        <div>
+          <label for="name" class="block text-sm font-semibold text-secondary">
+            Name
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            autocomplete="name"
+            class="mt-2 w-full rounded-xl border border-slate-200/80 bg-background px-4 py-3 text-base text-secondary outline-none transition-all placeholder:text-secondary/40 focus:border-primary focus:ring-4 focus:ring-primary/10"
+            placeholder="Your full name"
+          />
+        </div>
+
+        <div>
+          <label for="email" class="block text-sm font-semibold text-secondary">
+            Email
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            autocomplete="email"
+            class="mt-2 w-full rounded-xl border border-slate-200/80 bg-background px-4 py-3 text-base text-secondary outline-none transition-all placeholder:text-secondary/40 focus:border-primary focus:ring-4 focus:ring-primary/10"
+            placeholder="you@example.com"
+          />
+        </div>
+
+        <div>
+          <label for="subject" class="block text-sm font-semibold text-secondary">
+            Subject
+          </label>
+          <select
+            id="subject"
+            name="subject"
+            required
+            class="mt-2 w-full rounded-xl border border-slate-200/80 bg-background px-4 py-3 text-base text-secondary outline-none transition-all focus:border-primary focus:ring-4 focus:ring-primary/10"
+          >
+            <option value="">Select a subject</option>
+            <option value="general">General Enquiry</option>
+            <option value="error">Report an Error</option>
+            <option value="suggest">Suggest a Symbol</option>
+            <option value="partnership">Partnership</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="message" class="block text-sm font-semibold text-secondary">
+            Message
+          </label>
+          <textarea
+            id="message"
+            name="message"
+            rows="6"
+            required
+            class="mt-2 w-full resize-y rounded-xl border border-slate-200/80 bg-background px-4 py-3 text-base text-secondary outline-none transition-all placeholder:text-secondary/40 focus:border-primary focus:ring-4 focus:ring-primary/10"
+            placeholder="Tell us how we can help…"
+          ></textarea>
+        </div>
+
+        <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <p class="text-sm text-secondary/60">
+            We aim to respond within 2 working days.
+          </p>
+          <button
+            type="submit"
+            class="inline-flex items-center justify-center rounded-xl bg-primary px-8 py-3.5 text-base font-semibold text-white transition-colors hover:bg-primary/90"
+          >
+            Send message
+          </button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

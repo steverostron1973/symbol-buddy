@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <polygon points="60,8 112,98 8,98"
+    fill="#2563EB"
+    stroke="#2563EB"
+    stroke-width="16"
+    stroke-linejoin="round"
+    stroke-linecap="round"/>
+  <circle cx="60" cy="72" r="26" fill="white"/>
+  <text x="60" y="82" text-anchor="middle" font-size="30" font-weight="700" font-family="sans-serif" fill="#2563EB">?</text>
+</svg>

@@ -1,0 +1,94 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CTA from '../components/CTA.astro';
+
+const stats = [
+  { value: '10,000+', label: 'Symbols' },
+  { value: '10', label: 'Categories' },
+  { value: 'Millions', label: 'Monthly visitors' },
+];
+---
+
+<Layout
+  title="About SymbolBuddy — Find Out What Any Symbol Means"
+  description="Learn about SymbolBuddy, the world's most comprehensive symbol reference website. Our mission is to help everyone understand the symbols in their daily life."
+>
+  <Header />
+
+  <main>
+    <article class="px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
+      <div class="mx-auto max-w-3xl">
+        <Breadcrumbs
+          crumbs={[
+            { label: 'Home', href: '/' },
+            { label: 'About' },
+          ]}
+        />
+
+        <h1 class="font-heading text-3xl font-bold text-secondary sm:text-4xl lg:text-5xl">
+          About SymbolBuddy
+        </h1>
+
+        <p class="mt-6 text-lg leading-relaxed text-secondary/80 sm:text-xl">
+          SymbolBuddy exists to help everyday people understand the symbols, signs and markings they encounter in daily life — from laundry care labels to car dashboard warning lights.
+        </p>
+
+        <div class="mt-12 space-y-10">
+          <section aria-labelledby="mission-heading">
+            <h2 id="mission-heading" class="font-heading text-2xl font-bold text-secondary">
+              Our Mission
+            </h2>
+            <p class="mt-4 text-base leading-relaxed text-secondary/80">
+              Symbols are everywhere, yet most of us were never taught what half of them mean. A flashing light on your dashboard, a triangle on a cleaning product, or a cryptic icon on a clothing label can leave you guessing — and guessing wrong can be costly, unsafe, or simply frustrating.
+            </p>
+            <p class="mt-4 text-base leading-relaxed text-secondary/80">
+              SymbolBuddy's mission is simple: make every symbol understandable. We translate technical markings into clear, plain-English explanations that anyone can read in seconds, whether you are at home, at work, or on the road.
+            </p>
+          </section>
+
+          <section aria-labelledby="why-heading">
+            <h2 id="why-heading" class="font-heading text-2xl font-bold text-secondary">
+              Why We Built SymbolBuddy
+            </h2>
+            <p class="mt-4 text-base leading-relaxed text-secondary/80">
+              We started SymbolBuddy after noticing how often people turn to search engines with vague queries like "triangle symbol on bottle" or "car light looks like engine." Existing results were scattered, outdated, or written in jargon that assumed specialist knowledge.
+            </p>
+            <p class="mt-4 text-base leading-relaxed text-secondary/80">
+              We built a single, trusted reference that covers the symbols people actually encounter — organised by category, searchable by keyword, and written for real-world situations. No manuals required, no guesswork needed.
+            </p>
+          </section>
+
+          <section aria-labelledby="accuracy-heading">
+            <h2 id="accuracy-heading" class="font-heading text-2xl font-bold text-secondary">
+              Our Commitment to Accuracy
+            </h2>
+            <p class="mt-4 text-base leading-relaxed text-secondary/80">
+              Every symbol entry on SymbolBuddy is researched against current standards, manufacturer guidance, and regulatory sources where applicable. We explain not just what a symbol means, but where you will see it, what you should do, and the common mistakes people make.
+            </p>
+            <p class="mt-4 text-base leading-relaxed text-secondary/80">
+              Standards evolve and new symbols appear all the time. We review and update our content regularly, and we welcome corrections from readers who spot something we have missed. If you find an error, please <a href="/contact" class="font-medium text-primary transition-colors hover:text-primary/80">get in touch</a> — it helps everyone who uses SymbolBuddy.
+            </p>
+          </section>
+        </div>
+
+        <div class="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-3">
+          {
+            stats.map((stat) => (
+              <div class="rounded-2xl border border-slate-200/80 bg-card px-6 py-8 text-center shadow-sm">
+                <p class="font-heading text-3xl font-bold text-primary">{stat.value}</p>
+                <p class="mt-2 text-sm font-medium text-secondary/70">{stat.label}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </article>
+
+    <CTA />
+  </main>
+
+  <Footer />
+</Layout>

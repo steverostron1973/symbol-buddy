@@ -1,0 +1,106 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+---
+
+<Layout
+  title="Terms of Use — SymbolBuddy"
+  description="Read the SymbolBuddy terms of use. By using this website you agree to these terms and conditions."
+>
+  <Header />
+
+  <main class="px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
+    <article class="mx-auto max-w-3xl">
+      <Breadcrumbs
+        crumbs={[
+          { label: 'Home', href: '/' },
+          { label: 'Terms of Use' },
+        ]}
+      />
+
+      <h1 class="font-heading text-3xl font-bold text-secondary sm:text-4xl lg:text-5xl">
+        Terms of Use
+      </h1>
+
+      <p class="mt-4 text-sm text-secondary/60">
+        Last updated: 27 June 2026
+      </p>
+
+      <div class="mt-10 space-y-10 text-base leading-relaxed text-secondary/80">
+        <p>
+          Welcome to SymbolBuddy. These Terms of Use govern your access to and use of symbolbuddy.com. By using this website, you agree to these terms. If you do not agree, please do not use SymbolBuddy.
+        </p>
+
+        <section aria-labelledby="use-heading">
+          <h2 id="use-heading" class="font-heading text-2xl font-bold text-secondary">
+            Use of This Website
+          </h2>
+          <p class="mt-4">
+            SymbolBuddy is provided as a free reference resource for personal, non-commercial use. You may browse, search, and share links to our content, provided you do not misrepresent SymbolBuddy or suggest any endorsement without our permission.
+          </p>
+          <p class="mt-4">
+            You agree not to scrape, copy, or republish substantial portions of our content for commercial purposes, attempt to disrupt the website, or use automated tools in a way that places unreasonable load on our servers.
+          </p>
+        </section>
+
+        <section aria-labelledby="accuracy-heading">
+          <h2 id="accuracy-heading" class="font-heading text-2xl font-bold text-secondary">
+            Accuracy of Information
+          </h2>
+          <p class="mt-4">
+            We work hard to ensure that symbol explanations on SymbolBuddy are accurate, current, and written in plain language. However, symbols and standards can vary by region, manufacturer, and over time. Information on this website is provided for general guidance only.
+          </p>
+          <p class="mt-4">
+            SymbolBuddy does not replace professional advice. For safety-critical decisions — such as responding to a car warning light, handling hazardous materials, or interpreting medical labelling — always consult the relevant product manual, qualified professional, or official source.
+          </p>
+        </section>
+
+        <section aria-labelledby="ip-heading">
+          <h2 id="ip-heading" class="font-heading text-2xl font-bold text-secondary">
+            Intellectual Property
+          </h2>
+          <p class="mt-4">
+            The SymbolBuddy name, logo, website design, and original written content are owned by SymbolBuddy or its licensors and are protected by copyright and other intellectual property laws.
+          </p>
+          <p class="mt-4">
+            Standard symbol pictograms and regulatory marks referenced on this site may be subject to their own copyright or trademark protections held by standards bodies, manufacturers, or other rights holders. Their inclusion on SymbolBuddy is for explanatory and educational purposes.
+          </p>
+        </section>
+
+        <section aria-labelledby="liability-heading">
+          <h2 id="liability-heading" class="font-heading text-2xl font-bold text-secondary">
+            Limitation of Liability
+          </h2>
+          <p class="mt-4">
+            SymbolBuddy is provided "as is" without warranties of any kind, whether express or implied. To the fullest extent permitted by law, SymbolBuddy and its operators shall not be liable for any direct, indirect, incidental, or consequential damages arising from your use of this website or reliance on its content.
+          </p>
+          <p class="mt-4">
+            Nothing in these terms excludes or limits liability where it would be unlawful to do so, including liability for death or personal injury caused by negligence or for fraud.
+          </p>
+        </section>
+
+        <section aria-labelledby="changes-heading">
+          <h2 id="changes-heading" class="font-heading text-2xl font-bold text-secondary">
+            Changes to These Terms
+          </h2>
+          <p class="mt-4">
+            We may update these Terms of Use from time to time. When we do, we will revise the "Last updated" date at the top of this page. Continued use of SymbolBuddy after changes are posted constitutes your acceptance of the updated terms.
+          </p>
+        </section>
+
+        <section aria-labelledby="terms-contact-heading">
+          <h2 id="terms-contact-heading" class="font-heading text-2xl font-bold text-secondary">
+            Contact
+          </h2>
+          <p class="mt-4">
+            If you have questions about these Terms of Use, please visit our <a href="/contact" class="font-medium text-primary transition-colors hover:text-primary/80">contact page</a> or email legal@symbolbuddy.com.
+          </p>
+        </section>
+      </div>
+    </article>
+  </main>
+
+  <Footer />
+</Layout>
