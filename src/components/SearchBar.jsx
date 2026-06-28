@@ -30,24 +30,26 @@ export default function SearchBar({
       <label htmlFor="symbol-search" className="sr-only">
         Search symbols
       </label>
-      <div className="relative flex items-center">
-        <span className="pointer-events-none absolute left-5 text-secondary/40" aria-hidden="true">
-          <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35M17 10a7 7 0 11-14 0 7 7 0 0114 0z" />
-          </svg>
-        </span>
-        <input
-          id="symbol-search"
-          type="search"
-          name="q"
-          value={query}
-          onChange={(event) => setQuery(event.target.value)}
-          placeholder={placeholder}
-          className="w-full rounded-2xl border border-slate-200/80 bg-card py-4 pl-14 pr-32 text-base text-secondary shadow-sm outline-none transition-all placeholder:text-secondary/40 focus:border-primary focus:ring-4 focus:ring-primary/10 sm:py-5 sm:text-lg"
-        />
+      <div className="flex overflow-hidden rounded-2xl bg-white p-2 shadow-2xl ring-1 ring-black/5">
+        <div className="relative flex flex-1 items-center">
+          <span className="pointer-events-none absolute left-5 text-slate-400" aria-hidden="true">
+            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35M17 10a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </span>
+          <input
+            id="symbol-search"
+            type="search"
+            name="q"
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
+            placeholder={placeholder}
+            className="w-full border-0 bg-transparent py-4 pl-14 pr-4 text-base text-[#0F172A] outline-none placeholder:text-slate-400 sm:text-lg"
+          />
+        </div>
         <button
           type="submit"
-          className="absolute right-2 rounded-xl bg-primary px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-primary/90 sm:px-6 sm:py-3 sm:text-base"
+          className="shrink-0 rounded-xl bg-[#2563EB] px-8 py-4 text-lg font-semibold text-white transition-colors hover:bg-[#1D4ED8]"
         >
           Search
         </button>

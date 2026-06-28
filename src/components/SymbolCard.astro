@@ -12,7 +12,7 @@ const { name, slug, category, meaning, image = null } = Astro.props;
 
 <a
   href={`/symbols/${slug}`}
-  class="group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200/80 bg-card shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/20 hover:shadow-md"
+  class="group flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-sm transition-all duration-200 hover:shadow-lg"
 >
   {
     image ? (
@@ -23,24 +23,22 @@ const { name, slug, category, meaning, image = null } = Astro.props;
         loading="lazy"
       />
     ) : (
-      <div class="flex aspect-[4/3] w-full items-center justify-center bg-gradient-to-br from-slate-100 to-slate-50">
-        <div class="flex h-16 w-16 items-center justify-center rounded-2xl bg-white shadow-sm">
-          <svg class="h-8 w-8 text-primary/60" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z" />
-          </svg>
-        </div>
+      <div class="flex aspect-[4/3] w-full items-center justify-center bg-[#F1F5F9]">
+        <svg class="h-10 w-10 text-[#2563EB]/50" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z" />
+        </svg>
       </div>
     )
   }
 
   <div class="flex flex-1 flex-col p-5">
-    <span class="text-xs font-semibold uppercase tracking-wide text-primary">
+    <span class="inline-flex w-fit rounded-full bg-[#EFF6FF] px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wide text-[#2563EB]">
       {category.replace(/-/g, ' ')}
     </span>
-    <h3 class="mt-1 font-heading text-lg font-bold text-secondary transition-colors group-hover:text-primary">
+    <h3 class="mt-2 font-heading text-lg font-bold text-[#0F172A] transition-colors group-hover:text-[#2563EB]">
       {name}
     </h3>
-    <p class="mt-2 line-clamp-2 text-sm leading-relaxed text-secondary/70">
+    <p class="mt-2 line-clamp-2 text-sm leading-relaxed text-[#64748B]">
       {meaning}
     </p>
   </div>

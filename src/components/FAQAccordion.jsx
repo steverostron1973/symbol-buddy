@@ -24,14 +24,17 @@ export default function FAQAccordion({ faqs }: Props) {
   };
 
   return (
-    <div className="divide-y divide-slate-200/80 rounded-2xl border border-slate-200/80 bg-card shadow-sm">
+    <div className="space-y-3">
       {faqs.map((faq, index) => {
         const isOpen = openIndex === index;
         const panelId = `faq-panel-${index}`;
         const buttonId = `faq-button-${index}`;
 
         return (
-          <div key={faq.question}>
+          <div
+            key={faq.question}
+            className="overflow-hidden rounded-xl border border-[#E2E8F0] bg-white shadow-sm"
+          >
             <h3>
               <button
                 id={buttonId}
@@ -42,11 +45,11 @@ export default function FAQAccordion({ faqs }: Props) {
                 onClick={() => toggle(index)}
                 onKeyDown={(event) => handleKeyDown(event, index)}
               >
-                <span className="font-heading text-base font-bold text-secondary sm:text-lg">
+                <span className="font-heading text-base font-bold text-[#0F172A] sm:text-lg">
                   {faq.question}
                 </span>
                 <span
-                  className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
+                  className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#EFF6FF] text-[#2563EB] transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
                   aria-hidden="true"
                 >
                   <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
@@ -63,7 +66,7 @@ export default function FAQAccordion({ faqs }: Props) {
               className={`grid transition-all duration-200 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
             >
               <div className="overflow-hidden">
-                <p className="px-6 pb-5 text-sm leading-relaxed text-secondary/70 sm:text-base">
+                <p className="px-6 pb-5 text-sm leading-relaxed text-[#64748B] sm:text-base">
                   {faq.answer}
                 </p>
               </div>

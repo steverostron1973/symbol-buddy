@@ -7,19 +7,19 @@ const navLinks = [
 ];
 ---
 
-<header class="sticky top-0 z-50 border-b border-slate-200/80 bg-card/95 shadow-sm backdrop-blur-sm">
-  <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
-    <a href="/" class="flex items-center gap-3">
-      <img src="/logo.svg" alt="SymbolBuddy" width="48" height="48" />
-      <span class="text-2xl font-bold text-[#2563EB]">SymbolBuddy</span>
+<header class="sticky top-0 z-50 border-b border-slate-200 bg-white shadow-md">
+  <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-5 sm:px-6 lg:px-8">
+    <a href="/" class="flex items-center gap-3.5">
+      <img src="/logo.svg" alt="SymbolBuddy" width="48" height="48" class="h-12 w-12" />
+      <span class="font-heading text-2xl font-bold tracking-tight text-[#2563EB]">SymbolBuddy</span>
     </a>
 
-    <nav class="hidden items-center gap-8 md:flex" aria-label="Main navigation">
+    <nav class="hidden items-center gap-10 md:flex" aria-label="Main navigation">
       {
         navLinks.map((link) => (
           <a
             href={link.href}
-            class="text-sm font-medium text-secondary/80 transition-colors hover:text-primary"
+            class="relative pb-0.5 text-sm font-semibold text-[#0F172A]/80 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-[#2563EB] after:transition-all after:duration-200 hover:text-[#2563EB] hover:after:w-full"
           >
             {link.label}
           </a>
@@ -30,7 +30,7 @@ const navLinks = [
     <button
       type="button"
       id="mobile-menu-button"
-      class="inline-flex items-center justify-center rounded-xl p-2 text-secondary transition-colors hover:bg-slate-100 md:hidden"
+      class="inline-flex items-center justify-center rounded-xl p-2 text-[#0F172A] transition-colors hover:bg-slate-100 md:hidden"
       aria-controls="mobile-menu"
       aria-expanded="false"
       aria-label="Open menu"
@@ -43,7 +43,7 @@ const navLinks = [
 
   <nav
     id="mobile-menu"
-    class="hidden border-t border-slate-200/80 bg-card px-4 py-4 md:hidden"
+    class="hidden border-t border-slate-200 bg-white px-4 py-4 md:hidden"
     aria-label="Mobile navigation"
   >
     <ul class="flex flex-col gap-1">
@@ -52,7 +52,7 @@ const navLinks = [
           <li>
             <a
               href={link.href}
-              class="block rounded-xl px-4 py-3 text-base font-medium text-secondary/80 transition-colors hover:bg-slate-50 hover:text-primary"
+              class="block rounded-xl px-4 py-3 text-base font-semibold text-[#0F172A]/80 transition-colors hover:bg-slate-50 hover:text-[#2563EB]"
             >
               {link.label}
             </a>
